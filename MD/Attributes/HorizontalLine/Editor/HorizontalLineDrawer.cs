@@ -21,7 +21,7 @@ public class HorizontalLineDrawer : DecoratorDrawer
             GUI.backgroundColor = m_HorizontalLine.Color;
             position.y += 15f;
 
-            float _labelWidth = GuiStyle().CalcSize(new GUIContent(m_HorizontalLine.Title)).x;
+            float _labelWidth = GuiStyle.CalcSize(new GUIContent(m_HorizontalLine.Title)).x;
             float _lineWidth = (position.width - _labelWidth) / 2f - OFFSET;
 
             float _LeftLine_x_Pos = position.xMin;
@@ -38,7 +38,7 @@ public class HorizontalLineDrawer : DecoratorDrawer
             , string.Empty, EditorStyles.helpBox);
             GUI.Box(_Outline, string.Empty, EditorStyles.objectFieldThumb);
             GUI.Box(_LeftLineRect, string.Empty, EditorStyles.objectFieldThumb);
-            GUI.Label(_LabelRect, m_HorizontalLine.Title, GuiStyle());
+            GUI.Label(_LabelRect, m_HorizontalLine.Title, GuiStyle);
             GUI.Box(_RightLineRect, string.Empty, EditorStyles.objectFieldThumb);
 
             if (!m_HorizontalLine.ColorizedField)
@@ -46,19 +46,22 @@ public class HorizontalLineDrawer : DecoratorDrawer
         }
     }
 
-    private GUIStyle GuiStyle()
+    private GUIStyle GuiStyle
     {
-        GUIStyle _LabelStyle = new GUIStyle()
+        get
         {
-            fontStyle = FontStyle.Bold,
-            fontSize = 12,
-            normal =
+            GUIStyle _LabelStyle = new GUIStyle()
             {
-                //textColor = m_HorizontalLine.Color
-                textColor = Color.white
-            }
-        };
-        return _LabelStyle;
+                fontStyle = FontStyle.Bold,
+                fontSize = 12,
+                normal =
+                {
+                    //textColor = m_HorizontalLine.Color
+                    textColor = Color.white
+                }
+            };
+            return _LabelStyle;
+        }
     }
 
     public override float GetHeight()
