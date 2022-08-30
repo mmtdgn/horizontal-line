@@ -39,5 +39,5 @@ public class HorizontalLineTest : MonoBehaviour
 ```` 
 |<b>Output</b><br>|
 |:----:|
-|<img src="/.github/screenshots/horizontal_line.png">|
+|<img src="/.github/screenshots/Screenshot_1.png">|
 
