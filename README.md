@@ -15,7 +15,7 @@ public class HorizontalLineTest : MonoBehaviour
     [SerializeField] private int m_Integer_2;
     [SerializeField] private int m_Integer_3;
 
-    [HorizontalLine("String Fields", "Cyan", true)]
+    [HorizontalLine("String Fields", "Cyan", false)]
     [SerializeField] private string m_String_1;
     [SerializeField] private string m_String_2;
     [SerializeField] private string m_String_3;
